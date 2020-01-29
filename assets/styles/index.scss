@@ -1,1 +1,24 @@
 @import '~bootstrap/scss/bootstrap';
+
+.topnav {
+  position: fixed;
+  background-color: #173039;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+}
+
+.topnav a {
+  float: right;
+  color: #e0e8ec;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color on hover */
+.topnav a:hover {
+  background-color: #13d4ee;
+  color: #173039;
+}
