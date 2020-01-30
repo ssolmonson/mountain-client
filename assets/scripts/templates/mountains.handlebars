@@ -1,0 +1,38 @@
+{{#each mountains as |mountain|}}
+  {{log mountain}}
+  <section data-id="{{mountain.id}}">
+    <h6>
+      {{mountain.date_of_visit}}
+    </h6>
+    <h3>
+      {{limit mountain.name 20}}
+    </h3>
+    <h4>
+      {{mountain.location}}
+    </h4>
+    <h6>Vertical Drop</h6>
+    <h7>
+      {{mountain.vertical_drop}}
+    </h7>
+
+    <h6>Conditions</h6>
+    <h7>
+      {{mountain.conditions}}
+    </h7>
+
+    <h6>Runs Taken</h6>
+    <h7>
+      {{mountain.runs_made}}
+    </h7>
+
+    <p>
+      {{#if mountain.user_mountain}}
+        {{mountain.user_mountain}}
+      {{else}}
+        Not users.
+      {{/if}}
+    </p>
+
+  </section>
+
+{{/each}}

@@ -13,10 +13,8 @@
     </head>
     <body>
       <div class="topnav">
-        <!-- <a class="active" href="#home">Home</a> -->
         <a href="#sign-up">Sign Up</a>
         <a href="#sign-in">Sign In</a>
-        <!-- <a href="#about">About</a> -->
       </div>
       <h1>(੭｡╹▿╹｡)੭</h1>
 
@@ -61,9 +59,89 @@
         </form>
       </div>
 
-      <div class="container"></div>
+      <div class="mt-client">Send it!</div>
+      <div class="mountain-buttons">
+        <button id="getMtBtn" class="btn btn-info mr-2">Get Mountains!</button>
+        <button id="clearMtBtn" class="btn btn-outline-info">Clear!</button>
+      </div>
 
-      <div class="container"></div>
+
+
+      <button type="button" class="btn btn-primary mtn-create" data-toggle="modal" data-target="#mtnModal" data-whatever="mtn">
+        Create Entry
+      </button>
+
+      <div class="modal fade" id="mtnModal" tabindex="-1" role="dialog" aria-labelledby="mtnModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="newMountain">&#9975; Create Mountain Entry &#127938;</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="new-mountain">
+                <div class="form-group">
+                  <label for="mtn-name" class="col-form-label">Mountain Name</label>
+                  <input type="text" class="form-control" id="mtn-name" placeholder="Required" name="mountain[name]">
+                </div>
+
+                <div class="form-group">
+                  <label for="mtn-location" class="col-form-label">Location (State, Country)</label>
+                  <input type="text" class="form-control" id="mtn-location" placeholder="Required" name="mountain[location]">
+                </div>
+
+                <div class="form-group">
+                  <label for="mtn-vert" class="col-form-label">Vertical Drop (ft)</label>
+                  <input type="number" class="form-control" id="mtn-vert" placeholder="Optional" name="mountain[vertical_drop]">
+                </div>
+
+                <div class="form-group">
+                  <label for="mtn-conditions" class="col-form-label">Conditions</label>
+                  <input type="text" class="form-control" id="mtn-conditions" placeholder="Optional" name="mountain[conditions]">
+                </div>
+
+                <div class="form-group">
+                  <label for="mtn-runs" class="col-form-label">Runs Taken</label>
+                  <input type="number" class="form-control" id="mtn-runs" placeholder="Optional" name="mountain[runs_made]">
+                </div>
+
+                <div class="form-group">
+                  <label for="mtnDifficultySelect">Select Difficulty</label>
+                  <select multiple class="form-control" id="mtnDifficultySelect" placeholder="Optional" name="mountain[difficulty]">
+                    <option>&#128994; Green Circle</option>
+                    <option>&#128998; Blue Square</option>
+                    <option>♦  Black Diamond</option>
+                    <option>♦♦ Double Black </option>
+                    <option>&#127794; Glades</option>
+                    <option>&#128507; Backcountry</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="mtn-date" class="col-form-label">Date</label>
+                  <input type="date" class="form-control" id="mtn-date" name="mountain[date_of_visit]">
+                </div>
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type='submit' class="btn btn-primary" id="mtn-save-entry">Save</button>
+
+              </form>
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="mtn-save-entry">Save</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div id='content' class="container content"></div>
+
+        <!-- <div class="container"></div> -->
+      </main>
 
     </body>
 </html>
