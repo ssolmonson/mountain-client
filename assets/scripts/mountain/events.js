@@ -22,6 +22,7 @@ const onCreateMtn = (event) => {
 
   api.createMtn(data)
     .then(ui.createMtnSuccess)
+    .then(() => onGetMts(event))
     .catch(ui.failure)
 }
 
@@ -30,10 +31,20 @@ const onClearMts = () => {
   ui.clearMts()
 }
 
+const onRemoveMtn = (event) => {
+  event.preventDefault()
+  // console.log(event)
+  const id = $(event.target).data('id')
+  api.removeMtn(id)
+    .then(() => onGetMts(event))
+    .catch(ui.failure)
+}
+
 const addHandlers = () => {
   $('#getMtBtn').on('click', onGetMts)
   $('#clearMtBtn').on('click', onClearMts)
   $('.new-mountain').on('submit', onCreateMtn)
+  $('.content').on('click', '.remove', onRemoveMtn)
 }
 
 module.exports = {
