@@ -3,6 +3,7 @@
 const config = require('../config.js')
 const store = require('../store.js')
 
+// runs an index of all mountains pulling information from the database
 const getMts = () => {
   return $.ajax({
     url: config.apiUrl + '/mountains',
@@ -12,6 +13,7 @@ const getMts = () => {
   })
 }
 
+// runs create of a new mountain placing information into the database
 const createMtn = (data) => {
   // console.log(data)
   return $.ajax({
@@ -24,6 +26,7 @@ const createMtn = (data) => {
   })
 }
 
+// destroys an entry from the database, only if the the entry is owned by the user logged in
 const removeMtn = (id) => {
   // debugger
   return $.ajax({
@@ -35,6 +38,8 @@ const removeMtn = (id) => {
   })
 }
 
+// updates an entry changing information in the database
+// only if the the entry is owned by the user logged in
 const updateMtn = (data, id) => {
   // console.log(data, id)
   return $.ajax({

@@ -4,9 +4,10 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('./../../../lib/get-form-fields')
 
+// function called from a click of the Get Mountains button, gets all mountains from the database
 const onGetMts = (event) => {
   event.preventDefault()
-  console.log(event)
+  // console.log(event)
   api.getMts()
     .then(ui.getMtsSuccess)
     .catch(ui.failure)
@@ -34,6 +35,8 @@ const onClearMts = () => {
 const onRemoveMtn = (event) => {
   event.preventDefault()
   // console.log(event)
+
+  // get id from mountains.handlebars
   const id = $(event.target).data('id')
   api.removeMtn(id)
     .then(() => onGetMts(event))
@@ -54,7 +57,7 @@ const onUpdateMtn = (event) => {
   // console.log(data)
 
   const id = $(event.target).data('id')
-  console.log(id)
+  // console.log(id)
   api.updateMtn(data, id)
     .then(ui.updateMtnSuccess)
     .then(() => onGetMts(event))
