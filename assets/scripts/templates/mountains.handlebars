@@ -10,30 +10,54 @@
     <h4>
       {{mountain.location}}
     </h4>
-    <h6>Vertical Drop</h6>
-    <h7>
+
+    <h5>
+      {{#if mountain.vertical_drop}}
+        Vertical Drop
+      {{else}}
+      {{/if}}
+    </h5>
+    <p>
       {{mountain.vertical_drop}}
-    </h7>
+    </p>
 
-    <h6>Conditions</h6>
-    <h7>
+    <h5>
+      {{#if mountain.conditions}}
+        Conditions
+      {{else}}
+      {{/if}}
+    </h5>
+    <p>
       {{mountain.conditions}}
-    </h7>
+    </p>
 
-    <h6>Runs Taken</h6>
-    <h7>
+    <h5>
+      {{#if mountain.difficulty}}
+        Difficulty of Runs
+      {{else}}
+      {{/if}}
+    </h5>
+    <p>
+      {{mountain.difficulty}}
+    </p>
+
+    <h5>
+      {{#if mountain.runs_made}}
+        Runs Taken
+      {{else}}
+      {{/if}}
+    </h5>
+    <p>
       {{mountain.runs_made}}
-    </h7>
+    </p>
 
     <p>
       {{#if mountain.user_mountain}}
-        {{mountain.user_mountain}}
+        <button class='btn btn-warning update' data-id="{{mountain.id}}">Update</button>
+        <button class='btn btn-danger remove' data-id="{{mountain.id}}">Remove</button>
       {{else}}
-        Not users.
       {{/if}}
     </p>
-
-    {{> steep mountain=mountain}}
 
   </section>
 

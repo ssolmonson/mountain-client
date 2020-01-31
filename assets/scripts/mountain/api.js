@@ -35,9 +35,22 @@ const removeMtn = (id) => {
   })
 }
 
+const updateMtn = (data, id) => {
+  // console.log(data, id)
+  return $.ajax({
+    url: config.apiUrl + '/mountains/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+
 module.exports = {
   getMts,
   createMtn,
   removeMtn,
+  updateMtn,
   config
 }

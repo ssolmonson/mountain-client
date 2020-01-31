@@ -15,6 +15,12 @@ const createMtnSuccess = () => {
   $('#message').delay(1500).hide('Entry Submitted Successfully!')
 }
 
+const updateMtnSuccess = () => {
+  $('#message').show().text('Entry Updated!')
+  $('#mtnModal').modal('hide')
+  $('#message').delay(1500).hide('Entry Updated!')
+}
+
 const clearMts = () => {
   $('.content').empty()
 }
@@ -26,6 +32,7 @@ const failure = (error) => {
 module.exports = {
   getMtsSuccess,
   createMtnSuccess,
+  updateMtnSuccess,
   clearMts,
   failure
 }

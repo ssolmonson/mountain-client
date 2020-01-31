@@ -109,7 +109,7 @@
 
                 <div class="form-group">
                   <label for="mtnDifficultySelect">Select Difficulty</label>
-                  <select multiple class="form-control" id="mtnDifficultySelect" placeholder="Optional" name="mountain[difficulty]">
+                  <select multiple class="form-control" id="mtnDifficultySelect" name="mountain[difficulty]">
                     <option>&#128994; Green Circle</option>
                     <option>&#128998; Blue Square</option>
                     <option>♦  Black Diamond</option>
@@ -136,6 +136,71 @@
           </div>
         </div>
       </div>
+
+
+      <div class="modal fade" id="mtnUpdateModal" tabindex="-1" role="dialog" aria-labelledby="mtnModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="updateMountain">&#9975; Update Entry &#127938;</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="update-mountain">
+                <div class="form-group">
+                  <label for="mtn-name" class="col-form-label">Mountain Name</label>
+                  <input type="text" class="form-control" id="mtn-update-name" placeholder="Required" name="mountain[name]">
+                </div>
+
+                <div class="form-group">
+                  <label for="mtn-location" class="col-form-label">Location (State, Country)</label>
+                  <input type="text" class="form-control" id="mtn-update-location" placeholder="Required" name="mountain[location]">
+                </div>
+
+                <div class="form-group">
+                  <label for="mtn-vert" class="col-form-label">Vertical Drop (ft)</label>
+                  <input type="number" class="form-control" id="mtn-update-vert" placeholder="Optional" name="mountain[vertical_drop]">
+                </div>
+
+                <div class="form-group">
+                  <label for="mtn-conditions" class="col-form-label">Conditions</label>
+                  <input type="text" class="form-control" id="mtn-update-conditions" placeholder="Optional" name="mountain[conditions]">
+                </div>
+
+                <div class="form-group">
+                  <label for="mtn-runs" class="col-form-label">Runs Taken</label>
+                  <input type="number" class="form-control" id="mtn-update-runs" placeholder="Optional" name="mountain[runs_made]">
+                </div>
+
+                <div class="form-group">
+                  <label for="mtnDifficultySelect">Select Difficulty</label>
+                  <select multiple class="form-control" id="mtnDifficultyUpdate" name="mountain[difficulty]">
+                    <option>&#128994; Green Circle</option>
+                    <option>&#128998; Blue Square</option>
+                    <option>♦  Black Diamond</option>
+                    <option>♦♦ Double Black </option>
+                    <option>&#127794; Glades</option>
+                    <option>&#128507; Backcountry</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="mtn-date" class="col-form-label">Date</label>
+                  <input type="date" class="form-control" id="mtn-update-date" name="mountain[date_of_visit]">
+                </div>
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type='submit' class="btn btn-primary" id="mtn-update-entry">Save</button>
+
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
 
       <main>
         <div id='content' class="container content"></div>

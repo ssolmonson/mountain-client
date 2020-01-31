@@ -40,11 +40,34 @@ const onRemoveMtn = (event) => {
     .catch(ui.failure)
 }
 
+const onShowUpdate = () => {
+  event.preventDefault()
+  $('#mtnUpdateModal').modal('show')
+}
+
+const onUpdateMtn = (event) => {
+  event.preventDefault()
+
+  const form = event.target
+
+  const data = getFormFields(form)
+  // console.log(data)
+
+  const id = $(event.target).data('id')
+  console.log(id)
+  api.updateMtn(data, id)
+    .then(ui.updateMtnSuccess)
+    .then(() => onGetMts(event))
+    .catch(ui.failure)
+}
+
 const addHandlers = () => {
   $('#getMtBtn').on('click', onGetMts)
   $('#clearMtBtn').on('click', onClearMts)
   $('.new-mountain').on('submit', onCreateMtn)
   $('.content').on('click', '.remove', onRemoveMtn)
+  $('.content').on('click', '.update', onShowUpdate)
+  $('.update-mountain').on('submit', onUpdateMtn)
 }
 
 module.exports = {
