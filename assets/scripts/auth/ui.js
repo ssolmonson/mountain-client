@@ -2,6 +2,7 @@
 
 const store = require('./../store')
 const signUpSuccess = function (response) {
+  $('#message').show('')
   $('#message').text('Successfully signed up!')
   $('input[type=email]').val('')
   $('input[type=password]').val('')
@@ -11,6 +12,7 @@ const signUpSuccess = function (response) {
 }
 
 const signInSuccess = function (response) {
+  $('#message').show('')
   $('#message').text('Successfully signed in!')
   store.user = response.user
   $('#sign-up').hide()
