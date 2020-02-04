@@ -46,6 +46,10 @@ const onRemoveMtn = (event) => {
 const onShowUpdate = () => {
   event.preventDefault()
   $('#mtnUpdateModal').modal('show')
+  // $('#modal-6').on('show.bs.modal', function (e) {
+  //   const id = $(e.relatedTarget).data('id')
+  //   console.log(id)
+  // })
 }
 
 const onUpdateMtn = (event) => {
@@ -55,13 +59,18 @@ const onUpdateMtn = (event) => {
 
   const data = getFormFields(form)
   // console.log(data)
+  $('#modal-6').on('show.bs.modal', function (e) {
+    const id = $(e.relatedTarget).data('id')
+    console.log(id)
 
-  const id = $(event.target).data('id')
-  // console.log(id)
-  api.updateMtn(data, id)
-    .then(ui.updateMtnSuccess)
-    .then(() => onGetMts(event))
-    .catch(ui.failure)
+    // const id = $(event.target).data('id')
+    // console.log(id)
+
+    api.updateMtn(data, id)
+      .then(ui.updateMtnSuccess)
+      .then(() => onGetMts(event))
+      .catch(ui.failure)
+  })
 }
 
 const addHandlers = () => {
