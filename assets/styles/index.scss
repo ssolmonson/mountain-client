@@ -27,6 +27,21 @@
   color: #173039;
 }
 
+// Review adding image
+
+// body {
+//   background-image: url("https://i.imgur.com/Fbtbzl0.jpg?1");
+//   background-size: cover;
+//   background-color: #47bce0;
+// }
+
+h1 {
+  padding-top: 55px;
+  text-align: center;
+  color: #0c5879;
+  background-color: #c4d8eb;
+}
+
 
 main {
   @include make-container;
