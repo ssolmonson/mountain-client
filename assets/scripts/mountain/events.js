@@ -28,11 +28,14 @@ const onCreateMtn = (event) => {
     .catch(ui.failure)
 }
 
+// clears all mountains
 const onClearMts = () => {
   event.preventDefault()
   ui.clearMts()
 }
-
+// removes a mountain for a specified id
+// this function is only allowed to be called on by mountains owned by
+// the user that is logged in, handled in mountains.handlebars
 const onRemoveMtn = (event) => {
   event.preventDefault()
   // console.log(event)
@@ -72,6 +75,7 @@ const onUpdateMtn = (event) => {
     .catch(ui.failure)
 }
 
+// handlers that handle click or submission events on the page
 const addHandlers = () => {
   $('#getMtBtn').on('click', onGetMts)
   $('#clearMtBtn').on('click', onClearMts)
