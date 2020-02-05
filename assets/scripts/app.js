@@ -15,6 +15,7 @@ $(() => {
   $('#clearMtBtn').hide()
   $('.mt-client').hide()
   $('.mtn-create').hide()
+  $('#clearMtBtn').hide()
   authEvents.addHandlers()
   mountainEvents.addHandlers()
 })

@@ -22,7 +22,6 @@ const signInSuccess = function (response) {
   // $('#change-password').show()
   $('#sign-out').show()
   $('#getMtBtn').show()
-  $('#clearMtBtn').show()
   $('.mt-client').show()
   $('.mtn-create').show()
   $('input[type=email]').val('')
