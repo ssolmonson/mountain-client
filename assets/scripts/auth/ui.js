@@ -47,8 +47,8 @@ const changeSuccess = function (response) {
 const signOutSuccess = function (response) {
   $('#message').show()
   $('#message').text('Sign out complete!')
-  $('#sign-up').show()
-  $('#sign-in').show()
+  $('.signup').show()
+  $('.signin').show()
   $('#change-password').hide()
   $('.content').empty()
   $('#getMtBtn').hide()
@@ -56,8 +56,9 @@ const signOutSuccess = function (response) {
   $('.mt-client').hide()
   $('.mtn-create').hide()
   $('#sign-out').hide()
-  $('#sign-up').hide()
-  $('#sign-in').hide()
+  // $('#sign-up').hide()
+  // $('#sign-in').hide()
+  $('.changePassNav').hide()
   $('#message').delay(1500).hide('Sign out complete!')
   // console.log(response)
 }
