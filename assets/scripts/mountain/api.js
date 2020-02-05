@@ -40,10 +40,10 @@ const removeMtn = (id) => {
 
 // updates an entry changing information in the database
 // only if the the entry is owned by the user logged in
-const updateMtn = (data, id) => {
-  // console.log(data, id)
+const updateMtn = (data) => {
+  // console.log(id)
   return $.ajax({
-    url: config.apiUrl + '/mountains/' + id,
+    url: config.apiUrl + '/mountains/' + store.mountain.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
