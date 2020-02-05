@@ -3,6 +3,7 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('./../../../lib/get-form-fields')
+const store = require('../store.js')
 
 // function called from a click of the Get Mountains button, gets all mountains from the database
 const onGetMts = (event) => {
@@ -45,7 +46,12 @@ const onRemoveMtn = (event) => {
 
 const onShowUpdate = () => {
   event.preventDefault()
-  $('#mtnUpdateModal').modal('show')
+  // $('#mtnUpdateModal').modal('show')
+  // $(document).ready(() => {
+  $('#mtnUpdateModal').on('show.bs.modal', (e) => {
+    store.mountain = $(e.relatedTarget).data('id')
+    console.log(store.mountain)
+  })
 }
 
 const onUpdateMtn = (event) => {
@@ -56,9 +62,11 @@ const onUpdateMtn = (event) => {
   const data = getFormFields(form)
   // console.log(data)
 
-  const id = $(event.target).data('id')
+  // const id = (e) => {
+  //   $(e.relatedTarget).data('id')
+  // }
   // console.log(id)
-  api.updateMtn(data, id)
+  api.updateMtn(data)
     .then(ui.updateMtnSuccess)
     .then(() => onGetMts(event))
     .catch(ui.failure)
@@ -70,7 +78,13 @@ const addHandlers = () => {
   $('.new-mountain').on('submit', onCreateMtn)
   $('.content').on('click', '.remove', onRemoveMtn)
   $('.content').on('click', '.update', onShowUpdate)
-  $('.update-mountain').on('submit', onUpdateMtn)
+  $('.update-mountain').on('submit',
+    // (e) => {
+    //   let id = $(e.relatedTarget).data('id')
+    //   console.log(id)
+    // },
+    onUpdateMtn)
+// }, onUpdateMtn)
 }
 
 module.exports = {

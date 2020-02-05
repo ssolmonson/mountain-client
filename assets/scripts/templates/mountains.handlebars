@@ -1,5 +1,5 @@
 {{#each mountains as |mountain|}}
-  {{log mountain}}
+  {{!-- {{log mountain}} --}}
   <section data-id="{{mountain.id}}">
     <h6>
       {{mountain.date_of_visit}}
@@ -53,7 +53,7 @@
 
     <p>
       {{#if mountain.user_mountain}}
-        <button class='btn btn-warning update' data-id="{{mountain.id}}">Update</button>
+        <button class='btn btn-warning update' data-toggle="modal" data-target="#mtnUpdateModal" data-id="{{mountain.id}}">Update</button>
         <button class='btn btn-danger remove' data-id="{{mountain.id}}">Remove</button>
       {{else}}
       {{/if}}
