@@ -49,11 +49,35 @@ const onSignOut = function (event) {
     .catch()
 }
 
+const showSignUp = () => {
+  $('#sign-up').show()
+  $('#sign-in').hide()
+}
+
+const showSignIn = () => {
+  $('#sign-in').show()
+  $('#sign-up').hide()
+}
+
+const showChange = () => {
+  $('#change-password').show()
+  $('#cancel-change').show()
+}
+
+const hideChange = () => {
+  $('#change-password').hide()
+  $('#cancel-change').hide()
+}
+
 const addHandlers = () => {
+  $('.signup').on('click', showSignUp)
+  $('.signin').on('click', showSignIn)
+  $('.changePassNav').on('click', showChange)
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChange)
   $('#sign-out').on('click', onSignOut)
+  $('#cancel-change').on('click', hideChange)
 }
 
 module.exports = {

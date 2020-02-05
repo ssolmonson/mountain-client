@@ -6,6 +6,8 @@ const signUpSuccess = function (response) {
   $('#message').text('Successfully signed up!')
   $('input[type=email]').val('')
   $('input[type=password]').val('')
+  $('#sign-up').hide()
+  $('#sign-in').show()
   // $('#message').text('Successfully signed up!')
   $('#message').delay(1500).hide('Successfully signed up!')
   // console.log(response)
@@ -17,7 +19,7 @@ const signInSuccess = function (response) {
   store.user = response.user
   $('#sign-up').hide()
   $('#sign-in').hide()
-  $('#change-password').show()
+  // $('#change-password').show()
   $('#sign-out').show()
   $('#getMtBtn').show()
   $('#clearMtBtn').show()
@@ -25,6 +27,9 @@ const signInSuccess = function (response) {
   $('.mtn-create').show()
   $('input[type=email]').val('')
   $('input[type=password]').val('')
+  $('.signup').hide()
+  $('.signin').hide()
+  $('.changePassNav').show()
   $('#message').delay(1500).hide('Successfully signed up!')
   // $('input[type=email]').val('')
   // console.log(response)
@@ -33,12 +38,14 @@ const signInSuccess = function (response) {
 const changeSuccess = function (response) {
   $('#message').show('')
   $('input[type=password]').val('')
+  $('#change-password').hide()
   $('#message').text('Password changed successfully!')
   $('#message').delay(1500).hide('Password changed successfully!')
   // console.log(response)
 }
 
 const signOutSuccess = function (response) {
+  $('#message').show()
   $('#message').text('Sign out complete!')
   $('#sign-up').show()
   $('#sign-in').show()
@@ -49,6 +56,8 @@ const signOutSuccess = function (response) {
   $('.mt-client').hide()
   $('.mtn-create').hide()
   $('#sign-out').hide()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
   $('#message').delay(1500).hide('Sign out complete!')
   // console.log(response)
 }
