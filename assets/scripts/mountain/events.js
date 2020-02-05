@@ -49,8 +49,8 @@ const onShowUpdate = () => {
   // $('#mtnUpdateModal').modal('show')
   // $(document).ready(() => {
   $('#mtnUpdateModal').on('show.bs.modal', (e) => {
-    store.mountain = $(e.relatedTarget).data('id')
-    console.log(store.mountain)
+    store.mountainid = $(e.relatedTarget).data('id')
+    // console.log(store.mountainid)
   })
 }
 
@@ -78,12 +78,10 @@ const addHandlers = () => {
   $('.new-mountain').on('submit', onCreateMtn)
   $('.content').on('click', '.remove', onRemoveMtn)
   $('.content').on('click', '.update', onShowUpdate)
-  $('.update-mountain').on('submit',
-    // (e) => {
-    //   let id = $(e.relatedTarget).data('id')
-    //   console.log(id)
-    // },
-    onUpdateMtn)
+  $('#mtnUpdateModal').on('hidden.bs.modal', () => {
+    $('#mtnUpdateModal').off('show.bs.modal')
+  })
+  $('.update-mountain').on('submit', onUpdateMtn)
 // }, onUpdateMtn)
 }
 

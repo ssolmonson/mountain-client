@@ -43,7 +43,7 @@ const removeMtn = (id) => {
 const updateMtn = (data) => {
   // console.log(id)
   return $.ajax({
-    url: config.apiUrl + '/mountains/' + store.mountain.id,
+    url: config.apiUrl + '/mountains/' + store.mountainid,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

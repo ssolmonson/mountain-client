@@ -22,7 +22,7 @@ const createMtnSuccess = () => {
 // hides the modal after the submit button, within the form, is clicked
 const updateMtnSuccess = () => {
   $('#message').show().text('Entry Updated!')
-  $('#mtnModal').modal('hide')
+  $('#mtnUpdateModal').modal('hide')
   $('#message').delay(1500).hide('Entry Updated!')
 }
 
