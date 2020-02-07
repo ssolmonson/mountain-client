@@ -1,12 +1,19 @@
 'use strict'
 
-// const api = require('./api.js')
+// const store = require('../store.js')
+
 const showMtsTemplate = require('../templates/mountains.handlebars')
 
 const getMtsSuccess = (data) => {
   const showMtsHtml = showMtsTemplate({ mountains: data.mountains })
-  $('.content').html(showMtsHtml)
-  $('#clearMtBtn').show()
+  // console.log(data.mountains.length)
+  if (data.mountains.length > 0) {
+    $('.content').html(showMtsHtml)
+    $('#clearMtBtn').show()
+  } else {
+    $('#message').show().text('Create a mountain first')
+    $('#message').delay(2000).hide('Create a mountain first')
+  }
 }
 
 // notifies the user of a successfull entry creation, message will self distruct after 1500ms
@@ -42,5 +49,6 @@ module.exports = {
   createMtnSuccess,
   updateMtnSuccess,
   clearMts,
+  // displayLength,
   failure
 }

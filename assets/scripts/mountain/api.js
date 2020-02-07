@@ -7,6 +7,7 @@ const store = require('../store.js')
 const getMts = () => {
   return $.ajax({
     url: config.apiUrl + '/mountains',
+    method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
