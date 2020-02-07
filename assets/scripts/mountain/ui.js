@@ -11,8 +11,8 @@ const getMtsSuccess = (data) => {
     $('.content').html(showMtsHtml)
     $('#clearMtBtn').show()
   } else {
-    $('#message').show().text('Create a mountain first')
-    $('#message').delay(2000).hide('Create a mountain first')
+    $('#message').show().text('Create an entry first!')
+    $('#message').delay(2000).hide('Create an entry first!')
   }
 }
 
