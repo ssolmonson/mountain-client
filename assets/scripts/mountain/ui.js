@@ -7,9 +7,12 @@ const showMtsTemplate = require('../templates/mountains.handlebars')
 const getMtsSuccess = (data) => {
   const showMtsHtml = showMtsTemplate({ mountains: data.mountains })
   // console.log(data.mountains.length)
+
+  // if there are items to display from the mountains table show the items
   if (data.mountains.length > 0) {
     $('.content').html(showMtsHtml)
     $('#clearMtBtn').show()
+    // otherwise show a message to create an entry
   } else {
     $('#message').show().text('Create an entry first!')
     $('#message').delay(2000).hide('Create an entry first!')

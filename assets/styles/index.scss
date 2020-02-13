@@ -10,6 +10,7 @@
   overflow: hidden;
   top: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .topnav a {
@@ -40,6 +41,20 @@ h1 {
   text-align: center;
   color: #0c5879;
   background-color: #c4d8eb;
+}
+
+.header-image {
+  background-image: url('public/MtConstance-WA.jpg');
+  min-height: 87vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  // max-width: 50%;
+  // height: 50%;
+// justify-content: center;
+// object-fit: contain;
+
 }
 
 
