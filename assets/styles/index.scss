@@ -57,6 +57,22 @@ h1 {
 
 }
 
+.mt-client {
+  color: #dfeaed;
+}
+
+#message {
+  color: #dfeaed;
+  font-weight: bold;
+  font-size: 20px
+  // text-align: center;
+}
+
+.navbar-bottom {
+  justify-content: center;
+  background-color: #173039;
+  z-index: 1000;
+}
 
 main {
   @include make-container;
