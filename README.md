@@ -1,73 +1,62 @@
 
-## Project Idea
+# Mountain Logger
 
-What is your project idea?  How did you come up with it? Why? Who would use it?
+This application gives users a place to log their ski or snowboard outings for a given day.
 
-```md
-My project idea is creating a log of mountains a user has visited and tracking certain statistics. My passion for skiing is where I really discovered what I wanted to create. It's another version of a tri tracker type application, and more akin to a journal of sorts at least for my base idea.
-```
+## Important Links
 
-## Write between 3-5 user stories
+- [ Mountain Logger API Repo ](https://github.com/ssolmonson/mountain-api)
+- [ Deployed Client ](https://ssolmonson.github.io/mountain-client/)
+- [ Deployed API ](https://arcane-cliffs-76201.herokuapp.com/)
+- [ GitHub ](https://github.com/ssolmonson)
+- [ LinkedIn ](https://www.linkedin.com/in/scottsolmonson/)
 
-We have gone over this before. Please refer to your notes, previous repos or the
-google machine if you need further assistance.
+### Planning Story
 
-```md
-As a user, I want to create an account to be able to track my data.
-As a user I want to create a new entry for a mountain.
-As a user I want to update information for a mountain.
-As a user I want to show a particular mountain so I can see my visits to it.
-As a user I want to view all the mountains I visited.
-As a user I want to enter statistics about my day on the mountain.
-As a user I want to be able to change my password to keep my account secure.
-As a user I want to share my log with my friends to give them recomendation based of my experiences on the particular slope.
-```
+I decided on this project idea as skiing is a huge passion of mine. The idea was to create a log of mountains a user has visited and tracking certain statistics. It's another version of a trip tracker type application, and more akin to a journal of sorts at least for my base idea.
 
-## Plan your tables and columns
+The first iteration of my project will feature a users table and a mountains table. A user will have many mountains. The users table will contain a first name, last name, and email. The mountains table with have the name of the mountain, location, vertical rise, difficulty, date visited, conditions, and a small review/description with a possible optional field for stats (maybe just a runs taken field at the start).
 
-What tables will you need? What will the columns on the table be?
+I started with whiteboarding my idea and drawing-up wireframes and ERDs to get a better idea of how I wanted to begin shapping this application. From here I started building my API. Authentication for users (sign-in, sign-up, change password, and sign-out) was tested with Postman. I then scaffolded my resource, built it out, and tested CRUD.
 
-```md
-The first iteration of my project will feature a users table and a mountains table. A user has many mountains. The users table will contain wi a first name, last name, and email (and possibly a nickname). The mountains table with have the name of the mountain, location, vertical rise, difficulty, date visited, conditions, and a small review/description with a possible optional field for stats (maybe just a runs taken field at the start). Advanced goals have a seperate stats table, and location table, with the stats table being able to track certain data and possibly include charts/graphs (Given that way beyond my basic scope)
-```
+My next step was creating a fairly simple web SPA, and building on it. I decided on using bootstraps modals for my resource form as they gave a nice look to the page. This did trip me up when it came to updating a particular mountain. Updating and removing is only available to the user who owns that particular entry and was handled by handlebars adding these buttons only if the entry belonged to the logged in user. Passing the user's ID into the update form was the trickiest part for me. This ended up being handled by a function that grabbed the id from `store` when the update modal was shown.
 
-## Create an ERD (entity relationship diagram)
-
-These are the diagrams that show how your tables are related to one another
-(one to many, many to many, etc).
-
-Include an image (or a link to image) below.
+This project has had very satisfying  moments in the design and and immplementation. I plan to continuing working on improving it, and shape it with the future goals in mind.
 
 
-![ERD](https://i.imgur.com/WLwoQd1.jpg)
+### User Stories
 
+- As a user, I want to create an account to be able to track my data.
+- As a user I want to create a new entry for a mountain.
+- As a user I want to update information for a mountain.
+- As a user I want to show a particular mountain so I can see my visits to it.
+- As a user I want to view all the mountains I visited.
+- As a user I want to enter statistics about my day on the mountain.
+- As a user I want to be able to change my password to keep my account secure.
+- As a user I want to share my log with my friends to give them recomendation based of my experiences on the particular slope.
 
-## Routing
+### Technologies Used
 
-What routes will you need to make the proper request to your API?
+- JavaScript
+- HTML
+- CSS
+- SASS
+- Bootstrap
+- Handlebars
+- Ruby-on-Rails API
+- jQuery
+- AJAX
 
-```md
-For my MVP I will want the basic CRUD routes for my mountain. Be able to create, show, index, update, and destroy a mountain for a particular logged in user.  The create, update, and destroy will only be allowed by an authenticated user with a token. My user will have a sign-up, sign-in, change-password, and sign-out.
-```
-
-## Wireframes
+#### Wireframe
 
 Please create a wireframe of your planned front end.
 ![wireframe](https://i.imgur.com/0etU6v1.jpg)
 
-## Timetable
+---
 
-Write a basic timetable for yourself, you don't have to stick to it but it
-helps to go in with a plan.
+##### Future Goals:
 
-```md
-1. Create User table
-2. Test User table routes
-3. Create Mountain table
-4. Test CRUD routes on Mountain table
-5. Join User table to Mountain table
-6. Test routes between the two
-7. Develop basic front-end structure
-8. Polish design of page
-9. View creativity/advanced goals (if time allows) and choose what to move forward with next
-```
+- Clean up the design and improve on the page flow
+- Add a Favorites table with a note section for users to favortie any entry. This would be a way of favoriting their day or seeing a mountain they wish to visit in the future based on another user's entry.
+- Stats, using this to keep track of more than just runs or giving a calculation for a general idea of calories burned based on runs and time (With a note that it would just be an estimation, not actual.)
+- Graphs based on stats

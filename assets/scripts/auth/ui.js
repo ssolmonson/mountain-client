@@ -84,6 +84,7 @@ const changeFailure = function () {
   $('#message').show('')
   $('input[type=password]').val('')
   $('#message').text('Failed to change password.')
+  $('#message').delay(1500).hide('Sign in failed!')
   // console.log(error)
 }
 
